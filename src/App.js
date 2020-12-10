@@ -1,6 +1,6 @@
 import React from 'react';
 import './App.css';
-import Amount from './Amount.js';
+import Converter from './Converter';
 import ConverterContext from './ConverterContext';
 
 class App extends React.Component {
@@ -9,24 +9,8 @@ class App extends React.Component {
 
     this.state = {
       theme: 'light',
-      isNegative: false,
-      value: 0,
     }
   }
-
-  _onChange = e => {
-
-    let isNegative = false;
-    let value = e.target.value;
-    let error = false;
-
-    if (value < 0) {
-        isNegative = true;
-        error = true;
-    }
-
-    this.setState({value, isNegative, error});
-  };
 
   exchangeRate = () => {
     return Math.random() * 10000;
@@ -50,20 +34,9 @@ class App extends React.Component {
         </div>
 
         <div className="App-converter">
-          <Amount 
-            name='euros'
-            label='Euros'
-            disabled={false}
-            isNegative={this.state.isNegative}
-            value={this.state.value}
-            onChange={this._onChange}
-          />
-          <Amount 
-            name='btc'
-            label='$BTC'
-            isNegative={this.state.isNegative}
-            disabled={true}
-            value={(this.state.value * this.exchangeRate()).toFixed(4)}
+          <Converter
+            cryptoName="$BTC"
+            exchangeRate={this.exchangeRate}
           />
         </div>
       </div>
