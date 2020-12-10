@@ -33,10 +33,14 @@ class App extends React.Component {
             </label>
         </div>
 
-        <div className="App-converter">
+        <div className="App-converters">
           <Converter
             cryptoName="$BTC"
-            exchangeRate={this.exchangeRate}
+            exchangeRate={0.5}
+          />
+          <Converter
+            cryptoName="$ETH"
+            exchangeRate={1.2}
           />
         </div>
       </div>

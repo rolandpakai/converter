@@ -28,7 +28,7 @@ export default class Converter extends React.Component {
 
     render() {
         return (
-            <div>
+            <div className="App-converter">
                 <Amount 
                     name='euros'
                     label='Euros'
@@ -42,7 +42,7 @@ export default class Converter extends React.Component {
                     label={this.props.cryptoName}
                     isNegative={this.state.isNegative}
                     disabled={true}
-                    value={(this.state.value * this.props.exchangeRate()).toFixed(4)}
+                    value={(this.state.value * this.props.exchangeRate).toFixed(4)}
                 />
             </div>
         )
