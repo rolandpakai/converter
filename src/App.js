@@ -20,7 +20,7 @@ class App extends React.Component {
     return (
       <ConverterContext.Provider
       value={{theme: this.state.theme}}>
-      <div className={`App-${this.state.theme}`}>
+      <div className={`App App-${this.state.theme}`}>
         <div className="App-header">
           <label>
               <span>Theme</span>
@@ -35,11 +35,13 @@ class App extends React.Component {
 
         <div className="App-converters">
           <Converter
-            cryptoName="$BTC"
+            header={<h3>BTC > EUR</h3>}
+            cryptoName="BTC"
             exchangeRate={0.5}
           />
           <Converter
-            cryptoName="$ETH"
+            header={<h3>ETH > EUR</h3>}
+            cryptoName="ETH"
             exchangeRate={1.2}
           />
         </div>

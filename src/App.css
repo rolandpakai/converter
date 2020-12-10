@@ -14,11 +14,12 @@
 }
 
 .App-header {
-  
+  background-color: #c1c1c1;
+  border-bottom: 2px solid gray;
 }
 
 .App-converters {
-  min-height: 100vh;
+  min-height: 90vh;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -31,7 +32,7 @@
   width: 320px;
   padding: 10px;
   border: 5px solid gray;
-  margin: 0;
+  margin: 10px;
 }
 
 .App-link {
@@ -48,13 +49,4 @@
 
 .negative {
   border: 3px solid palevioletred;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
 }
