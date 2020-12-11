@@ -14,15 +14,18 @@ export default class Converter extends React.Component {
     }
 
     _onChange = e => {
+        console.log('Converter::_onChange ' + this.props.cryptoName);
         let isNegative = false;
         let value = e.target.value;
         let error = false;
-    
+        
         if (value < 0) {
             isNegative = true;
             error = true;
         }
-    
+
+        this.props.onConversation();
+        
         this.setState({value, isNegative, error});
     };
 
