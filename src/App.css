@@ -30,6 +30,16 @@
   top: 50px;
 }
 
+.App-premium-button {
+  text-align: center;
+  display: block;
+  margin: 0;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  position: absolute;
+  top: 40px;
+}
+
 .App-converters {
   min-height: 90vh;
   display: flex;

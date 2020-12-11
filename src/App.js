@@ -10,11 +10,8 @@ class App extends React.Component {
     this.state = {
       theme: 'light',
       conversions: 0,
+      premium: false,
     }
-  }
-
-  exchangeRate = () => {
-    return Math.random() * 10000;
   }
 
   _onConversion = () => {
@@ -28,11 +25,27 @@ class App extends React.Component {
     this.setState({ conversions });
   };
 
+  _setPremium = () => {
+    this.setState({premium: true})
+  }
+
   render() {
     let freemium;
 
-    if (this.state.conversions == 5) {
-      freemium = <div className="App-freemium"> Freemium Advert! </div>
+    if (this.state.premium) {
+      freemium = <div className="App-freemium">💎 Premium conversion</div>
+    } else {
+      if (this.state.conversions == 5) {
+        freemium = <div className="App-freemium"> 
+          Freemium Advert! 
+          <button
+                className="App-premium-button"
+                onClick={this._setPremium}
+                type="button">
+                Become Premium
+              </button>
+        </div>
+      }
     }
 
     return (
